@@ -7,7 +7,7 @@ const contestFetcherCron = () => {
     console.log('⏰ Running scheduled contest fetch (every 12 hours)...');
     
     try {
-      const res = await axios.get('https://contesthub1-server-notify.onrender.com/api/contests/dashboard');
+      const res = await axios.get('https://contesthub1-server.onrender.comapi/contests/dashboard');
       
       if (res.status === 200) {
         console.log(`✅ Fetched contests via API: ${res.data.msg || 'Success'}`);
