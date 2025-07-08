@@ -19,7 +19,8 @@ const sendEmail = async (user, contest) => {
     html: `
       <p>Hey <strong>${user.username}</strong>!</p>
       <p>Your bookmarked contest <strong>${contest.name}</strong> on <strong>${contest.platform}</strong> is starting soon.</p>
-      <p>⏰ Start Time: <strong>${new Date(contest.startTime).toLocaleString()}</strong></p>
+      <p>⏰ Start Time: <strong>${new Date(contest.startTime).toLocaleString()}</strong> UTC</p>
+      <p>(Time may vary according to your geographical location.)</p>
       <p><a href="${contest.url}">🔗 Click here to view the contest</a></p>
       <p>Good luck!</p>
     `
