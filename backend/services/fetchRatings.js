@@ -20,7 +20,7 @@ const fetchRatings = async (handles) => {
   // ✅ LeetCode Rating
   if (handles.leetcode) {
     try {
-      const lcRes = await axios.get(`https://contesthub1-server-notify.onrender.com/api/fetch/leetcode/${handles.leetcode}`);
+      const lcRes = await axios.get(`https://contesthub1-server.onrender.com/api/fetch/leetcode/${handles.leetcode}`);
 
       if (lcRes.data && lcRes.data.rating) {
         results.leetcode = {
@@ -39,7 +39,7 @@ const fetchRatings = async (handles) => {
   // ✅ CodeChef Rating (via internal API)
   if (handles.codechef) {
     try {
-      const ccRes = await axios.get(`https://contesthub1-server-notify.onrender.com/api/fetch/codechef/${handles.codechef}`);
+      const ccRes = await axios.get(`https://contesthub1-server.onrender.com/api/fetch/codechef/${handles.codechef}`);
 
       if (ccRes.data && ccRes.data.rating) {
         results.codechef = {
