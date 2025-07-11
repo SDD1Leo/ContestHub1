@@ -212,6 +212,10 @@ const removeFriend = async (req, res) => {
   }
 };
 
+const ping = async(req,res) => {
+  res.status(200).send("all good");
+}
+
 module.exports = {
   updateHandles,
   getHandles,
@@ -222,4 +226,5 @@ module.exports = {
   addFriend,
   getFriends,
   removeFriend,
+  ping,
 };
