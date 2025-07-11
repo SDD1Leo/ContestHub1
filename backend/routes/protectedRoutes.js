@@ -14,7 +14,7 @@ router.post('/unbookmark', authMiddleware , unbookmark);
 router.post('/add-friend', authMiddleware, addFriend);
 router.get('/friends', authMiddleware, getFriends);
 router.put('/remove-friend', authMiddleware, removeFriend);
-router.put('/ping',ping);
+router.get('/ping',ping);
 
 
 module.exports = router;
