@@ -3,7 +3,7 @@ const router = express.Router();
 const authMiddleware = require('../middlewares/authMiddleware');
 const { updateHandles, getHandles ,getRatings ,bookmark,unbookmark ,syncRatings , addFriend , getFriends , removeFriend , ping } = require('../controllers/userController');
 
-router.use(authMiddleware);
+//router.use(authMiddleware);
 
 router.get('/profile',authMiddleware, getHandles);            // GET /api/user/profile
 router.put('/update-handles',authMiddleware, updateHandles);  // PUT /api/user/update-handles
