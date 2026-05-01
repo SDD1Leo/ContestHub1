@@ -14,6 +14,9 @@ function Home() {
       while (!isAwake && Date.now() - startTime < 60000) {
         try {
           const res = await fetch(
+            //this is the fetch url
+            //this pings the server to check if it is awake or sleeping
+            //I don't know what that means
             "https://contesthub1-server.onrender.com/api/user/ping",
             {
               method: "GET",
@@ -88,5 +91,4 @@ function Home() {
     </div>
   );
 }
-
 export default Home;
