@@ -13,12 +13,23 @@ function Home() {
 
       while (!isAwake && Date.now() - startTime < 60000) {
         try {
+
+          // const res = await fetch(
+          //   "https://contesthub1-server.onrender.com/api/user/ping",
+          //   {
+          //     method: "GET",
+          //     cache: "no-store",
+          //   },
+          // );
+
           const res = await fetch(
+
             "https://contesthub1-server.onrender.com/api/user/ping",
             {
-              method: "GET",
-              cache: "no-store",
+                method: "GET",
+                cache: "no-store",
             },
+
           );
 
           if (res.ok) {
