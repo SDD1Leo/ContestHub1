@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+// This is the home page
 function Home() {
   const navigate = useNavigate();
   const [serverAwake, setServerAwake] = useState(false);
@@ -13,10 +13,13 @@ function Home() {
 
       while (!isAwake && Date.now() - startTime < 60000) {
         try {
-          const res = await fetch("https://contesthub1-server.onrender.com/api/user/ping", {
-            method: "GET",
-            cache: "no-store",
-          });
+          const res = await fetch(
+            "https://contesthub1-server.onrender.com/api/user/ping",
+            {
+              method: "GET",
+              cache: "no-store",
+            },
+          );
 
           if (res.ok) {
             isAwake = true;
@@ -38,7 +41,9 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold mb-4 text-primary">Welcome to ContestHub</h1>
+      <h1 className="text-4xl font-bold mb-4 text-primary">
+        Welcome to ContestHub
+      </h1>
       <p className="text-lg text-gray-300 mb-8">
         Discover and track upcoming coding contests from various platforms!
       </p>
@@ -47,7 +52,9 @@ function Home() {
         onClick={() => navigate("/login")}
         disabled={!serverAwake}
         className={`${
-          serverAwake ? "bg-primary hover:bg-red-600" : "bg-gray-600 cursor-not-allowed"
+          serverAwake
+            ? "bg-primary hover:bg-red-600"
+            : "bg-gray-600 cursor-not-allowed"
         } text-white font-semibold py-2 px-6 rounded transition duration-200 flex items-center gap-2`}
       >
         {!serverAwake ? (
